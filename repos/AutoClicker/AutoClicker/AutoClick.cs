@@ -81,7 +81,6 @@ namespace AutoClicker
 
         private void Info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("hi");
             Credits credits = new Credits();
             credits.ShowDialog();
         }
