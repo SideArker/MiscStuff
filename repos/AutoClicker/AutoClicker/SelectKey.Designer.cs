@@ -56,7 +56,7 @@
             this.Name = "SelectKey";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SelectKey";
+            this.Text = "Press any key";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SelectKey_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();

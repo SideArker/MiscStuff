@@ -27,6 +27,7 @@ namespace AutoClicker
         Keys stopKey = Keys.F1;
         bool stopKeyPressed = false;
         bool currentlyClicking = false;
+        Overlay currentOverlay;
 
         #endregion
 
@@ -37,6 +38,7 @@ namespace AutoClicker
             FormClosing += AutoClick_FormClosing;
             Timer.Stop();
             StopTimer.Stop();
+            RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 0, (int)stopKey);
         }
 
         void AutoClick_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,14 +59,25 @@ namespace AutoClicker
                 UnregisterHotKey(this.Handle, MYACTION_HOTKEY_ID);
                 this.StopKeyLabel.Text = selectKeyForm.Key.KeyCode.ToString();
                 stopKey = selectKeyForm.Key.KeyCode;
+                RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 0, (int)stopKey);
             }
         }
 
 
         private void StartClick_Click(object sender, EventArgs e)
         {
+            StartClicking();
+        }
+
+        private void Info_Click(object sender, EventArgs e)
+        {
+            Credits credits = new Credits();
+            credits.ShowDialog();
+        }
+
+        void StartClicking()
+        {
             stopKeyPressed = false;
-            RegisterHotKey(this.Handle, MYACTION_HOTKEY_ID, 0, (int)stopKey);
             Timer.Interval = Convert.ToInt32(TimeBetween.Text);
             Timer.Start();
 
@@ -77,22 +90,29 @@ namespace AutoClicker
             currentlyClicking = true;
 
             this.WindowState = FormWindowState.Minimized;
-        }
 
-        private void Info_Click(object sender, EventArgs e)
-        {
-            Credits credits = new Credits();
-            credits.ShowDialog();
+            if(showOverlay.Checked)
+            {
+                currentOverlay = new Overlay(Convert.ToInt32(ClickTimer.Text), this.StopKeyLabel.Text);
+                currentOverlay.Show();
+            }
         }
 
         void StopClicking()
         {
-            this.WindowState = FormWindowState.Normal;
 
             stopKeyPressed = true;
             Timer.Stop();
             StopTimer.Stop();
             currentlyClicking = false;
+
+            if (showOverlay.Checked && currentOverlay != null)
+            {
+                currentOverlay.Close();
+                currentOverlay = null;
+            }
+
+            if (showApp.Checked) this.WindowState = FormWindowState.Normal;
 
             if (notifyOnStop.Checked == true)
             {
@@ -114,6 +134,17 @@ namespace AutoClicker
                 uint X = (uint)Cursor.Position.X;
                 uint Y = (uint)Cursor.Position.Y;
                 mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+
+                if(currentOverlay != null)
+                {
+                    if(currentOverlay.stopClicking == true)
+                    {
+                        StopClicking();
+                        return;
+                    }
+
+                    currentOverlay.totalClicks += 1;
+                }
             }
             else
             {
@@ -138,6 +169,7 @@ namespace AutoClicker
                 {
                     StopClicking();
                 }
+                else StartClicking();
 
             }
             base.WndProc(ref m);

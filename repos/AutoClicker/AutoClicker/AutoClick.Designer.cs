@@ -45,6 +45,8 @@
             this.StopTimer = new System.Windows.Forms.Timer(this.components);
             this.notifyOnStop = new System.Windows.Forms.CheckBox();
             this.Info = new System.Windows.Forms.PictureBox();
+            this.showApp = new System.Windows.Forms.CheckBox();
+            this.showOverlay = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Info)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,7 +125,7 @@
             this.StopKeyLabel.AutoSize = true;
             this.StopKeyLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StopKeyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.StopKeyLabel.Location = new System.Drawing.Point(120, 307);
+            this.StopKeyLabel.Location = new System.Drawing.Point(120, 296);
             this.StopKeyLabel.Name = "StopKeyLabel";
             this.StopKeyLabel.Size = new System.Drawing.Size(44, 31);
             this.StopKeyLabel.TabIndex = 7;
@@ -134,15 +136,15 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(158, 269);
+            this.label7.Location = new System.Drawing.Point(158, 258);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 25);
+            this.label7.Size = new System.Drawing.Size(136, 25);
             this.label7.TabIndex = 8;
-            this.label7.Text = "Stop key";
+            this.label7.Text = "Start/Stop key";
             // 
             // ChangeStopKey
             // 
-            this.ChangeStopKey.Location = new System.Drawing.Point(185, 307);
+            this.ChangeStopKey.Location = new System.Drawing.Point(185, 296);
             this.ChangeStopKey.Name = "ChangeStopKey";
             this.ChangeStopKey.Size = new System.Drawing.Size(103, 31);
             this.ChangeStopKey.TabIndex = 9;
@@ -153,7 +155,7 @@
             // StartClick
             // 
             this.StartClick.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.StartClick.Location = new System.Drawing.Point(163, 403);
+            this.StartClick.Location = new System.Drawing.Point(163, 407);
             this.StartClick.Name = "StartClick";
             this.StartClick.Size = new System.Drawing.Size(117, 35);
             this.StartClick.TabIndex = 10;
@@ -172,7 +174,7 @@
             // notifyOnStop
             // 
             this.notifyOnStop.AutoSize = true;
-            this.notifyOnStop.Location = new System.Drawing.Point(163, 359);
+            this.notifyOnStop.Location = new System.Drawing.Point(163, 336);
             this.notifyOnStop.Name = "notifyOnStop";
             this.notifyOnStop.Size = new System.Drawing.Size(110, 20);
             this.notifyOnStop.TabIndex = 12;
@@ -191,11 +193,37 @@
             this.Info.TabStop = false;
             this.Info.Click += new System.EventHandler(this.Info_Click);
             // 
+            // showApp
+            // 
+            this.showApp.AutoSize = true;
+            this.showApp.Checked = true;
+            this.showApp.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showApp.Location = new System.Drawing.Point(163, 359);
+            this.showApp.Name = "showApp";
+            this.showApp.Size = new System.Drawing.Size(136, 20);
+            this.showApp.TabIndex = 14;
+            this.showApp.Text = "Show app on stop";
+            this.showApp.UseVisualStyleBackColor = true;
+            // 
+            // showOverlay
+            // 
+            this.showOverlay.AutoSize = true;
+            this.showOverlay.Checked = true;
+            this.showOverlay.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showOverlay.Location = new System.Drawing.Point(163, 382);
+            this.showOverlay.Name = "showOverlay";
+            this.showOverlay.Size = new System.Drawing.Size(110, 20);
+            this.showOverlay.TabIndex = 15;
+            this.showOverlay.Text = "Show overlay";
+            this.showOverlay.UseVisualStyleBackColor = true;
+            // 
             // AutoClick
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(440, 450);
+            this.Controls.Add(this.showOverlay);
+            this.Controls.Add(this.showApp);
             this.Controls.Add(this.Info);
             this.Controls.Add(this.notifyOnStop);
             this.Controls.Add(this.StartClick);
@@ -214,7 +242,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AutoClick";
-            this.Text = "AutoClick";
+            this.Text = "AutoClicker";
             ((System.ComponentModel.ISupportInitialize)(this.Info)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,5 +266,7 @@
         private System.Windows.Forms.Timer StopTimer;
         private System.Windows.Forms.CheckBox notifyOnStop;
         private System.Windows.Forms.PictureBox Info;
+        private System.Windows.Forms.CheckBox showApp;
+        private System.Windows.Forms.CheckBox showOverlay;
     }
 }

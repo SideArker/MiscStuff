@@ -11,3 +11,17 @@ C:\Users\darks\source\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.pdb
 C:\Users\darks\source\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.AutoClick.resources
 C:\Users\darks\source\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.SelectKey.resources
 C:\Users\darks\source\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.Credits.resources
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\bin\Debug\AutoClicker.exe.config
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\bin\Debug\AutoClicker.exe
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\bin\Debug\AutoClicker.pdb
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csproj.AssemblyReference.cache
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csproj.SuggestedBindingRedirects.cache
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.AutoClick.resources
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.Credits.resources
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.Overlay.resources
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.Properties.Resources.resources
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.SelectKey.resources
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csproj.GenerateResource.cache
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.csproj.CoreCompileInputs.cache
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.exe
+C:\GitHub\MiscStuff\repos\AutoClicker\AutoClicker\obj\Debug\AutoClicker.pdb
